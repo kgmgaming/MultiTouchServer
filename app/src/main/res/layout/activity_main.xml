@@ -4,5 +4,5 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context="com.example.toptal.multitouchserver.MainActivity">
+    tools:context="com.kgm.multitouchserver.MainActivity">
 </android.support.constraint.ConstraintLayout>

@@ -1,4 +1,4 @@
-package com.example.toptal.multitouchserver;
+package com.kgm.multitouchserver;
 
 public class MultiTouchDevice {
     static {
@@ -11,8 +11,8 @@ public class MultiTouchDevice {
         this.fd = openMtDevice();
     }
 
-    public void injectByteArrayAsMtEvent(byte[] bytes) throws Exception {
-        injectByteArrayAsMtEvent(this.fd, bytes);
+    public void injectTouchEvent(char state, int slot, int id, int x, int y) throws Exception {
+        injectTouchEvent(this.fd, slot, state, id, x, y);
     }
 
     public void close() {
@@ -25,7 +25,7 @@ public class MultiTouchDevice {
         close();
     }
 
-    private native int injectByteArrayAsMtEvent(int fd, byte[] bytes) throws Exception;
+    private native int injectTouchEvent(int fd, int slot, char state, int id, int x, int y) throws Exception;
     private native int openMtDevice() throws Exception;
     private native int closeMtDevice(int fd);
 }
